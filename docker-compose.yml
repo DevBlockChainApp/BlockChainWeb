@@ -1,0 +1,27 @@
+version: "3"
+services:
+
+  bchain_web:
+    image: bchain_web
+    ports:
+      - "8081:8081"
+    volumes:
+      - .:/opt/app
+    command: python start.py
+    env_file:
+      - .env
+    build: .
+    depends_on:
+      postgres:
+        condition: service_started
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=user1
+      - POSTGRES_PASSWORD=password123123123
+      - POSTGRES_DB=students
+    ports:
+      - "5432:5432"
+    restart: always
