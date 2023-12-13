@@ -25,3 +25,15 @@ services:
     ports:
       - "5432:5432"
     restart: always
+
+  migration:
+    image: migration
+    volumes:
+      - .:/opt/app
+    command: alembic upgrade head
+    env_file:
+      - .env
+    build: .
+    depends_on:
+      postgres:
+        condition: service_started
