@@ -3,7 +3,7 @@ from datetime import datetime
 import hashlib
 from app.crud.block import block as crud_block
 
-class Block:
+class AddBlock:
     def __init__(self, data: str):
         self.data = data
         self.date_create = datetime.now()
@@ -24,7 +24,7 @@ class Block:
             'hash_block': self.hash_block,
             'prev_hash': None
         }
-    
+
     async def save_to_db(self, db: AsyncSession):
         return await crud_block.create(db, obj_in=self.get_block_info())
 

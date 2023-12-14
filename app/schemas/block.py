@@ -14,6 +14,11 @@ class AddNewBlock(BaseModel):
     data: str
 
 
+class AddChainBlock(BaseModel):
+    data: str
+    prev_hash: str
+
+
 class BlockCreate(BaseModel):
     pass
 
