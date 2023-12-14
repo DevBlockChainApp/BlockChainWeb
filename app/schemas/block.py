@@ -10,6 +10,10 @@ class BlockData(BaseModel):
     prev_hash: Optional[str]
 
 
+class AddNewBlock(BaseModel):
+    data: str
+
+
 class BlockCreate(BaseModel):
     pass
 

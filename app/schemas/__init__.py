@@ -1,1 +1,1 @@
-from app.schemas.block import BlockData, BlockCreate, BlockUpdate  # noqa: F401
+from app.schemas.block import BlockData, BlockCreate, BlockUpdate, AddNewBlock  # noqa: F401
