@@ -9,6 +9,9 @@ class BlockData(BaseModel):
     hash_block: Optional[str]
     prev_hash: Optional[str]
 
+    class Config:
+        orm_mode = True
+
 
 class AddNewBlock(BaseModel):
     data: str

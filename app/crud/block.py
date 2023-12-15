@@ -9,6 +9,7 @@ from sqlalchemy import select
 class CRUDBlock(CRUDBase[Block, BlockCreate, BlockUpdate]):
     async def get(self, db: AsyncSession, *args) -> Optional[Block]:
         return (await db.execute(select(self.model).filter(*args))).all()
+        
 
 
 block = CRUDBlock(Block)
