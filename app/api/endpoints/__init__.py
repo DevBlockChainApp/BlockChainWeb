@@ -1,1 +1,1 @@
-from app.schemas.block import BlockData
+from app.schemas.block import BlockData  # noqa: F401

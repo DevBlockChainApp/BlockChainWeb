@@ -1,10 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
-from app.api.deps import get_db
-from app.schemas import AddNewBlock, AddChainBlock, BlockData
-from app.service import CreateBlock, ChainBlock
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.models.block import Block
+
+from app.api.deps import get_db
 from app.crud.block import block as crud_block
+from app.models.block import Block
+from app.schemas import AddChainBlock, AddNewBlock, BlockData
+from app.service import ChainBlock, CreateBlock
 
 router = APIRouter()
 

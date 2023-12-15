@@ -1,10 +1,13 @@
-from app.schemas import AddChainBlock
-from datetime import datetime
-from sqlalchemy.ext.asyncio import AsyncSession
-from app.crud.block import block as crud_block
 import hashlib
-from app.models import Block
+from datetime import datetime
+
 from sqlalchemy import or_
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.crud.block import block as crud_block
+from app.models import Block
+from app.schemas import AddChainBlock
+
 
 class ChainBlock:
     def __init__(self, block: AddChainBlock):
