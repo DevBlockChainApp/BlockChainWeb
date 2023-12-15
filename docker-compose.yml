@@ -5,9 +5,10 @@ services:
     image: bchain_web
     ports:
       - "8081:8081"
+      - "9081:9081"
     volumes:
       - .:/opt/app
-    command: python start.py
+    command: bash -c "python -m debugpy --listen 0.0.0.0:9081 start.py"
     env_file:
       - .env
     build: .

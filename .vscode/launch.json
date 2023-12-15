@@ -5,12 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Start Web",
+            "name": "Python: Remote Attach",
             "type": "python",
-            "request": "launch",
-            "program": "start.py",
-            "console": "integratedTerminal",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 9081
+            },
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}",
+                    "remoteRoot": "."
+                }
+            ],
             "justMyCode": true
-        }
+        },
     ]
 }

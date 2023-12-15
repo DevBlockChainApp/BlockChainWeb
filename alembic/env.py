@@ -7,7 +7,7 @@ from alembic import context
 
 from app.core.config import settings
 from app.db.base_class import Base
-from app.model import *
+from app.models import *
 
 
 # this is the Alembic Config object, which provides
