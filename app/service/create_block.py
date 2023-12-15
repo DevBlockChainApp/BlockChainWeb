@@ -3,7 +3,7 @@ from datetime import datetime
 import hashlib
 from app.crud.block import block as crud_block
 
-class AddBlock:
+class CreateBlock:
     def __init__(self, data: str):
         self.data = data
         self.date_create = datetime.now()

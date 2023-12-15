@@ -3,6 +3,8 @@ from datetime import datetime
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.crud.block import block as crud_block
 import hashlib
+from app.models import Block
+from sqlalchemy import or_
 
 class ChainBlock:
     def __init__(self, block: AddChainBlock):
@@ -31,5 +33,6 @@ class ChainBlock:
         return await crud_block.create(db, obj_in=self.get_block_info())
     
     async def check_block(self, db):
-        return await crud_block.get(db, self.prev_hash)
+        objs = await crud_block.get(db, or_(Block.hash_block == self.prev_hash, Block.prev_hash == self.prev_hash))
+        return len(objs) == 1
     
