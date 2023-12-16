@@ -12,5 +12,5 @@ class Block(Base):
     index = Column(Integer, primary_key=True, index=True)
     data = Column(String, index=True)
     date_create = Column(TIMESTAMP, server_default=text('now()'))
-    hash_block = Column(String, index=True)
-    prev_hash = Column(String, index=True)
+    hash_block = Column(String, unique=True, index=True)
+    prev_hash = Column(String, unique=True, index=True)
