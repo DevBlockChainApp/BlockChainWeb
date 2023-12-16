@@ -1,6 +1,7 @@
-from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional
+
+from pydantic import BaseModel
 
 
 class BlockData(BaseModel):
@@ -17,14 +18,6 @@ class AddNewBlock(BaseModel):
     data: str
 
 
-class AddChainBlock(BaseModel):
+class AddNewChainBlock(BaseModel):
     data: str
     prev_hash: str
-
-
-class BlockCreate(BaseModel):
-    pass
-
-
-class BlockUpdate(BaseModel):
-    pass
