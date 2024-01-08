@@ -28,5 +28,5 @@ class BlockBase(BlockDB):
     async def check_new_block(self, db: AsyncSession) -> bool: ...
     
     async def get_block(self, db: AsyncSession) -> BlockData:
-        return self._get_block(db, Block.hash_block == self.hash_block)
+        return await self._get_block(db, Block.hash_block == self.hash_block)
         
