@@ -2,9 +2,9 @@ from datetime import datetime
 
 from sqlalchemy import or_
 
-from app.block_chain_service.block_base import BlockBase
 from app.models import Block
 from app.schemas import AddNewChainBlock
+from app.block_chain_service.block_base import BlockBase
 
 
 class CreateChainBlock(BlockBase):
